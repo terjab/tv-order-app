@@ -19,6 +19,7 @@ const theme = {
   },
   size: {
     xSmall: '0.5rem',
+    mSmall: '0.9rem',
     small: '1.25rem',
     normal: '1.4rem',
     medium: '1.6rem',

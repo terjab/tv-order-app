@@ -1,0 +1,16 @@
+[{
+  "id": 1,
+  "name": "kids",
+  "price": "50$"
+},
+{
+  "id": 2,
+  "name": "sport",
+  "price": "100$"
+},
+{
+  "id": 3,
+  "name": "regular",
+  "price": "25$"
+}]
+
