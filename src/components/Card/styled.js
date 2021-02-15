@@ -3,7 +3,6 @@ import theme from '../../common/theme'
 
 export const Wrapper = styled.div`
   text-align: center;
-  opacity: 0.6;
   border-radius: ${theme.radius.small};
   width: 20rem;
   height: 28rem;
@@ -12,7 +11,7 @@ export const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: ${theme.color.white};
+  background-color: rgba(255,255,255, 0.5);
 `
 
 export const SectionWrapper = styled.div`
