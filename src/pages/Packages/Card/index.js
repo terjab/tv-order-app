@@ -1,9 +1,23 @@
 import React from 'react'
 import * as routes from '../../routes'
-import { Wrapper, Card, CardTitle, HR, CardText, Program, SectionWrapper, Link } from './styled'
+import {
+  Wrapper,
+  Card,
+  CardTitle,
+  HR,
+  CardText,
+  Program,
+  SectionWrapper,
+  Link,
+} from './styled'
 
 export const CardComponent = ({ data }) => {
-  const { id, name, price,  programs: {kids, sport, regular} } = data
+  const {
+    id,
+    name,
+    price,
+    programs: { kids, sport, regular },
+  } = data
 
   return (
     <>
@@ -23,7 +37,7 @@ export const CardComponent = ({ data }) => {
             <Link to={routes.getPackageDetailRoute(id)}>Select</Link>
           </SectionWrapper>
         </Card>
-        </Wrapper>
+      </Wrapper>
     </>
   )
 }

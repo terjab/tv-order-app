@@ -5,7 +5,7 @@ import { Wrapper, P } from './styled'
 
 export const Package = ({ currentPackage }) => {
   const { price } = currentPackage
-  
+
   const getPrograms = () => {
     let programs = []
 
@@ -22,9 +22,7 @@ export const Package = ({ currentPackage }) => {
     <>
       <H1>Your packages</H1>
       <P>{price}</P>
-      <Wrapper>
-        {getPrograms()}
-      </Wrapper>
+      <Wrapper>{getPrograms()}</Wrapper>
     </>
   )
 }

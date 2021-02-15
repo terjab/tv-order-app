@@ -3,7 +3,7 @@ import theme from '../../common/theme'
 
 export const P = styled.p`
   text-align: center;
-  color: ${theme.color.white};;
+  color: ${theme.color.white}; ;
 `
 
 export const PackageWrap = styled.ul`

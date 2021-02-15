@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255,255,255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 `
 
 export const SectionWrapper = styled.div`
@@ -48,17 +48,17 @@ export const Program = styled.p`
 export const HR = styled.hr``
 
 export const Link = styled(BaseLink)`
-background: ${theme.color.brown};
-padding: ${theme.size.xSmall};
-margin-top: ${theme.size.small};;
-border: none;
-display:block;
-width: 100%;
-border-radius: ${theme.radius.small};
-color: ${theme.color.white};
-&:hover {
-  background: ${theme.color.gray};
-  text-decoration: none;
+  background: ${theme.color.brown};
+  padding: ${theme.size.xSmall};
+  margin-top: ${theme.size.small};
+  border: none;
+  display: block;
+  width: 100%;
+  border-radius: ${theme.radius.small};
   color: ${theme.color.white};
-}
+  &:hover {
+    background: ${theme.color.gray};
+    text-decoration: none;
+    color: ${theme.color.white};
+  }
 `

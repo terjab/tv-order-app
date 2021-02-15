@@ -4,7 +4,7 @@ import theme from '../../common/theme'
 const Button = styled.button`
   background: ${theme.color.brown};
   padding: ${theme.size.xSmall};
-  margin-top: ${theme.size.small};;
+  margin-top: ${theme.size.small};
   border: none;
   width: 100%;
   border-radius: ${theme.radius.small};

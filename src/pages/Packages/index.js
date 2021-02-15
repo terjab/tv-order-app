@@ -6,16 +6,18 @@ import { H1 } from '../../components/Header/index'
 export const Packages = () => {
   return (
     <>
-    <H1>TV App</H1>
-    <P>Select one of our amazing television packages. You can get selection of sports, kids and regular programs.</P>
-    <PackageWrap>
-      {data.packages.map((item) => (
-        <Card 
-          key={item.id}
-          data={item}
-          pic={item.name === "Tarif 1" ? '/kid.jpeg' : '/sport.png'}
-        />
-      ))}
+      <H1>TV App</H1>
+      <P>
+        Select one of our amazing television packages. You can get selection of
+        sports, kids and regular programs.
+      </P>
+      <PackageWrap>
+        {data.packages.map((item) => (
+          <Card
+            key={item.id}
+            data={item}
+          />
+        ))}
       </PackageWrap>
     </>
   )
