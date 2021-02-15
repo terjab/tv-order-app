@@ -9,7 +9,6 @@ const Button = styled.button`
   width: 100%;
   border-radius: ${theme.radius.small};
   color: ${theme.color.white};
-
   &:hover {
     background: ${theme.color.gray};
   }
