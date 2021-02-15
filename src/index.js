@@ -5,7 +5,12 @@ import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 const render = () => {
-  ReactDOM.render(<Router><App /></Router>, document.getElementById('root'))
+  ReactDOM.render(
+    <Router>
+      <App />
+    </Router>,
+    document.getElementById('root')
+  )
 }
 
 if (module.hot) {

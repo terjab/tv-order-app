@@ -1,22 +1,24 @@
 {
-  "packages": [{
-    "id": 1,
-    "name": "Tarif 1",
-    "price": "100$",
-    "programs": {
-      "kids": 1,
-      "sport": 0,
-      "regular": 2
+  "packages": [
+    {
+      "id": 1,
+      "name": "Tarif 1",
+      "price": "100$",
+      "programs": {
+        "kids": 1,
+        "sport": 0,
+        "regular": 2
+      }
+    },
+    {
+      "id": 2,
+      "name": "Tarif 2",
+      "price": "150$",
+      "programs": {
+        "kids": 1,
+        "sport": 2,
+        "regular": 4
+      }
     }
-  },
-  {
-    "id": 2,
-    "name": "Tarif 2",
-    "price": "150$",
-    "programs": {
-      "kids": 1,
-      "sport": 2,
-      "regular": 4
-    }
-  }]
+  ]
 }
