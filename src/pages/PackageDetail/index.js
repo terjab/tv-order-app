@@ -3,7 +3,8 @@ import programsData from '../../data/programs.json'
 import { Package } from './Package'
 import { Navbar } from '../../components/Navbar'
 import Button from '../../components/Button/index'
-import { Wrapper } from './styled'
+import { Wrapper, Link } from './styled'
+import { HOMEPAGE } from '../../routes'
 
 export const PackageDetail = ({ match }) => {
   const { packageId } = match.params
@@ -12,6 +13,7 @@ export const PackageDetail = ({ match }) => {
   return (
     <>
       <Navbar selectedPackage={currentPackage} packages={packagesData.packages} programs={programsData} />
+      <Link to={HOMEPAGE}>{`<< Back to homepage`}</Link>
       <Package currentPackage={currentPackage} />
       <Wrapper>
         <Button>Order</Button>

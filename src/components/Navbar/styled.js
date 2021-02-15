@@ -4,7 +4,7 @@ import theme from '../../common/theme'
 export const Nav = styled.ul`
   list-style-type: none;
   margin: 0;
-  margin-bottom: ${theme.size.xxLarge};
+  margin-bottom: ${theme.size.small};
   padding: 0;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.5);
