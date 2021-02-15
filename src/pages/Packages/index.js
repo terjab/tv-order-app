@@ -1,9 +1,9 @@
 import data from '../../data/initial-packages-data.json'
 import { CardComponent as Card } from '../../components/Card'
-import { PackageWrap, H1, P } from './styled'
+import { PackageWrap, P } from './styled'
+import { H1 } from '../../components/Header/index'
 
 export const Packages = () => {
-  console.log(data.packages)
   return (
     <>
     <H1>TV App</H1>
@@ -11,6 +11,7 @@ export const Packages = () => {
     <PackageWrap>
       {data.packages.map((item) => (
         <Card 
+          key={item.id}
           data={item}
           pic={item.name === "Tarif 1" ? '/kid.jpeg' : '/sport.png'}
         />

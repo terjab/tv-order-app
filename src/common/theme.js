@@ -5,6 +5,9 @@ const theme = {
     purple: '#6364d9',
     white: '#fff',
     brown: '#5c3128',
+    green: '#a3c2ab',
+    yellow: '#f0ecc7',
+    red: '#f0cce1',
   },
   fonts: {
     raleway: "'Raleway', sans-serif",
