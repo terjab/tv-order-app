@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# TV Order App
+
+Choose from multiple TV tarifs and add additional packages. TV App with React, React Hooks, Redux and Styled-Components. 
+
+## Local development
+### `yarn`
+### `yarn start`
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
