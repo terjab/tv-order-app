@@ -13,12 +13,13 @@ import { Link } from './styled'
 const PackageDetailComponent = ({ match, addProgram, program, setSelectedPackage, tvPackage }) => {
   const { packageId } = match.params
   const [tvProgram, setTvProgram] = useState('')
+  const [tarif, setTarif] = useState('')
 
   const setInitialPackage = () => {
     const currentPackage = packagesData.packages.filter(
       (item) => item.id == packageId
     )[0]
-    console.log('currentPackage',currentPackage)
+    setTarif(currentPackage)
     setSelectedPackage(currentPackage)
   }
 
@@ -31,14 +32,15 @@ const PackageDetailComponent = ({ match, addProgram, program, setSelectedPackage
 
   useEffect(() => {
     setInitialPackage()
-  }, [])
+  }, [packageId])
+
 
   return (
     <>
-      {tvPackage &&
+      {tarif &&
       <>
         <Navbar
-          currentPackage={tvPackage}
+          currentPackage={tarif}
           packages={packagesData.packages}
           programs={programsData}
           onAdd={addSelectedProgram}
