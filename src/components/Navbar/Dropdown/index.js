@@ -45,7 +45,7 @@ class DropdownComponent extends Component {
         { !isPackage ? (<Option name="none">none</Option>) : ''}
         {this.props.data.map((item) => (
           <Option key={item.id} value={item.name}>
-            {item.name} {isPackage ? '' : item.price}
+            {item.name} {isPackage ? '' : item.price + '$'}
           </Option>
         ))}
       </Select>

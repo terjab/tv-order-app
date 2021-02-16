@@ -1,5 +1,5 @@
 import data from '../../data/initial-packages-data.json'
-import { CardComponent as Card } from '../../components/Card'
+import { CardComponent as Card } from './Card'
 import { PackageWrap, P } from './styled'
 import { H1 } from '../../components/Header/index'
 

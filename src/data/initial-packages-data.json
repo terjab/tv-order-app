@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Tarif 1",
-      "price": "100$",
+      "price": "100",
       "programs": {
         "kids": 1,
         "sport": 0,
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "name": "Tarif 2",
-      "price": "150$",
+      "price": "150",
       "programs": {
         "kids": 1,
         "sport": 2,

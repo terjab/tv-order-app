@@ -1,29 +1,65 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
+import programsData from '../../../data/programs.json'
 import { H1 } from '../../../components/Header'
 import { Program } from '../../../components/Program'
-import { Wrapper, P } from './styled'
+import { Wrapper, P, ProgramWrapper, Sum } from './styled'
+import isEmpty from 'ramda/src/isEmpty'
 
-export const Package = ({ currentPackage, extraProgram }) => {
-  const { price } = currentPackage
+const PackageComponent = ({ currentPackage, programs }) => {
+  const { price, name } = currentPackage
+  const [packagesPrice, setPackagesPrice ] = useState(0)
+  const [regularComponents, setRegularComponents ] = useState([])
+  const [extraComponents, setExtraComponents] = useState([])
 
-  const getPrograms = () => {
-    let programs = []
+  useEffect(() => {
+    const regularData = getPrograms(currentPackage.programs)
+    const extrasData = getPrograms(programs, true)
 
-    for (let [program, count] of Object.entries(currentPackage.programs)) {
+    setPackagesPrice(calculateExtras(extrasData))
+    setRegularComponents(regularData)
+    setExtraComponents(extrasData)
+  }, [programs, currentPackage])
+
+  const calculateExtras = extrasData => {
+    const sum = extrasData.reduce( (total, item) => total + item.props.price, 0)
+    return sum
+  }
+
+  const getProgramPrice = (programName) => {
+    const programPrice = parseInt(programsData.filter( item => item.name === programName)[0].price)
+    return programPrice
+  }
+
+  const getPrograms = ( renderPrograms ) => {
+    let programComponents = []
+
+    for (const [program, count] of Object.entries(renderPrograms)) {
       for (let i = 0; i < count; i++) {
-        programs.push(<Program name={program} />)
+        programComponents.push(<Program name={program} price={getProgramPrice(program)}/>)
       }
     }
-
-    return programs
+    return programComponents
   }
 
   return (
-    <>
+    <Wrapper>
       <H1>Your packages</H1>
-      <P>{price}</P>
-      <Wrapper>{getPrograms()}</Wrapper>
-    </>
+      <Sum>Total price: {packagesPrice + parseInt(price)}$</Sum>
+      <P>{name} ({price}$)</P>
+      <ProgramWrapper>{regularComponents}</ProgramWrapper>
+      {!isEmpty(extraComponents) &&
+        <>
+          <P>Your extra packages: {packagesPrice}$</P>
+          <ProgramWrapper>{extraComponents}</ProgramWrapper>
+        </>
+      }
+    </Wrapper>
   )
 }
 
+const mapStateToProps = state => ({
+  programs: state.programs
+})
+
+export const Package = connect(mapStateToProps)(PackageComponent)

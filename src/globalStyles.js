@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: ${theme.size.small};
     background-color: transparent;
     font-family: ${theme.fonts.quicksand};
+    padding-bottom: ${theme.size.xxLarge};
   }
 `
 

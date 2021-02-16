@@ -24,7 +24,7 @@ export const CardComponent = ({ data }) => {
         <Card>
           <CardTitle>{name}</CardTitle>
           <HR />
-          <CardText>{price}</CardText>
+          <CardText>{price}$</CardText>
           <HR />
           <SectionWrapper>
             <CardText>Programs:</CardText>
