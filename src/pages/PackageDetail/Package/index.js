@@ -3,11 +3,12 @@ import { connect } from 'react-redux'
 import programsData from '../../../data/programs.json'
 import { H1 } from '../../../components/Header'
 import { Program } from '../../../components/Program'
-import { Wrapper, P, ProgramWrapper, Sum } from './styled'
+import { Wrapper, P, ProgramWrapper, Sum, ButtonWrapper } from './styled'
 import isEmpty from 'ramda/src/isEmpty'
+import { Link } from '../../../components/Link'
 
 const PackageComponent = ({ currentPackage, programs }) => {
-  const { price, name } = currentPackage
+  const { price, name, id } = currentPackage
   const [packagesPrice, setPackagesPrice ] = useState(0)
   const [regularComponents, setRegularComponents ] = useState([])
   const [extraComponents, setExtraComponents] = useState([])
@@ -43,18 +44,24 @@ const PackageComponent = ({ currentPackage, programs }) => {
   }
 
   return (
+    <>
     <Wrapper>
-      <H1>Your packages</H1>
-      <Sum>Total price: {packagesPrice + parseInt(price)}$</Sum>
-      <P>{name} ({price}$)</P>
-      <ProgramWrapper>{regularComponents}</ProgramWrapper>
-      {!isEmpty(extraComponents) &&
-        <>
-          <P>Your extra packages: {packagesPrice}$</P>
-          <ProgramWrapper>{extraComponents}</ProgramWrapper>
-        </>
-      }
-    </Wrapper>
+        <H1>Your packages</H1>
+        <Sum>Total price: {packagesPrice + parseInt(price)}$</Sum>
+        <P>{name} ({price}$)</P>
+        <ProgramWrapper>{regularComponents}</ProgramWrapper>
+        {!isEmpty(extraComponents) &&
+          <>
+            <P>Your extra packages: {packagesPrice}$</P>
+            <ProgramWrapper>{extraComponents}</ProgramWrapper>
+          </>
+        }
+      </Wrapper>
+      <ButtonWrapper>
+        <Link to={`/${id}/order/regular=${price}&extras=${packagesPrice}`}>Order</Link>
+      </ButtonWrapper>
+    </>
+
   )
 }
 

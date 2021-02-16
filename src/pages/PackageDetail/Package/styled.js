@@ -5,6 +5,14 @@ export const Wrapper = styled.div`
   margin-bottom: ${theme.size.xLarge};
 `
 
+export const ButtonWrapper = styled.div`
+  width: 40%;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+`
+
 export const ProgramWrapper = styled.div`
   display: flex;
   flex-direction: row;

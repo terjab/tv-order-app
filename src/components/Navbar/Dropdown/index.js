@@ -12,6 +12,7 @@ class DropdownComponent extends Component {
   }
 
   componentDidMount() {
+    // Check for package or program
     const { isPackage } = this.state
     if (isPackage) {
       this.setState({ value: this.props.currentPackage.name })
@@ -20,16 +21,22 @@ class DropdownComponent extends Component {
 
   componentDidUpdate() {
     try {
-      // Get a whole object of dropdown value
-      const currentItem = this.props.data.filter(
-        (item) => item.name === this.state.value
-      )[0]
+      const currentItem = this.getCurrentItem()
       // Set selected tv package and program data
       this.state.isPackage ? this.props.setSelectedPackage(currentItem) : this.props.setSelectedProgram(currentItem)
     } catch {
       // Set program data if none program is selected
       this.props.noProgramSelected()
     }
+  }
+
+  // Get a whole object of dropdown value
+  getCurrentItem = () => {
+    const currentItem = this.props.data.filter(
+      (item) => item.name === this.state.value
+    )[0]
+
+    return currentItem
   }
 
   render() {

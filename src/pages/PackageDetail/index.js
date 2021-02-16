@@ -8,10 +8,9 @@ import { setSelectedPackage as setSelectedPackageAction } from '../../store/sele
 
 import { Package } from './Package'
 import { Navbar } from '../../components/Navbar'
-import { Link as ButtonLink } from '../../components/Link'
-import { Wrapper, Link } from './styled'
+import { Link } from './styled'
 
-const PackageDetailComponent = ({ match, addProgram, program, setSelectedPackage, tvPackage, loadProgram }) => {
+const PackageDetailComponent = ({ match, addProgram, program, setSelectedPackage, tvPackage }) => {
   const { packageId } = match.params
   const [tvProgram, setTvProgram] = useState('')
 
@@ -19,6 +18,7 @@ const PackageDetailComponent = ({ match, addProgram, program, setSelectedPackage
     const currentPackage = packagesData.packages.filter(
       (item) => item.id == packageId
     )[0]
+    console.log('currentPackage',currentPackage)
     setSelectedPackage(currentPackage)
   }
 
@@ -45,9 +45,6 @@ const PackageDetailComponent = ({ match, addProgram, program, setSelectedPackage
         />
         <Link to={routes.HOMEPAGE}>{`<< Back to homepage`}</Link>
         <Package currentPackage={tvPackage} extraProgram={tvProgram} />
-        <Wrapper>
-          <ButtonLink to={`/${packageId}/order`}>Order</ButtonLink>
-        </Wrapper>
       </>
       }
     </>

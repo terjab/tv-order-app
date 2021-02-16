@@ -13,7 +13,7 @@ const App = () => {
       <Switch>
         <Route path={routes.HOMEPAGE} exact component={Packages} />
         <Route path={routes.PACKAGE_DETAIL} exact component={PackageDetail} />
-        <Route path={routes.ORDER} exact component={Order} />
+        <Route path={routes.ORDER} component={Order} />
       </Switch>
     </>
   )
