@@ -1,5 +1,5 @@
 import React from 'react'
-import * as routes from '../../routes'
+import { Link } from '../../../components/Link'
 import {
   Wrapper,
   Card,
@@ -8,7 +8,6 @@ import {
   CardText,
   Program,
   SectionWrapper,
-  Link,
 } from './styled'
 
 export const CardComponent = ({ data }) => {
@@ -34,7 +33,7 @@ export const CardComponent = ({ data }) => {
             <Program>regular: {regular}</Program>
           </SectionWrapper>
           <SectionWrapper>
-            <Link to={routes.getPackageDetailRoute(id)}>Select</Link>
+            <Link to={`/${id}`}>Select</Link>
           </SectionWrapper>
         </Card>
       </Wrapper>

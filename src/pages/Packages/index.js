@@ -13,10 +13,7 @@ export const Packages = () => {
       </P>
       <PackageWrap>
         {data.packages.map((item) => (
-          <Card
-            key={item.id}
-            data={item}
-          />
+          <Card key={item.id} data={item} />
         ))}
       </PackageWrap>
     </>

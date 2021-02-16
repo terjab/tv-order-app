@@ -5,6 +5,7 @@ import theme from '../../common/theme'
 export const Wrapper = styled.div`
   width: 40%;
   display: block;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 `

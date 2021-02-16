@@ -6,5 +6,4 @@ export const Select = styled.select`
   border-radius: ${theme.radius.small};
   border: none;
 `
-export const Option = styled.option`
-`
+export const Option = styled.option``

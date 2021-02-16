@@ -5,10 +5,8 @@ const handleColorType = (programName) => {
   switch (programName) {
     case 'kids':
       return theme.color.yellow
-      break
     case 'sport':
       return theme.color.green
-      break
     default:
       return theme.color.red
   }

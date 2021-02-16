@@ -1,16 +1,17 @@
-[{
-  "id": 1,
-  "name": "kids",
-  "price": "50$"
-},
-{
-  "id": 2,
-  "name": "sport",
-  "price": "100$"
-},
-{
-  "id": 3,
-  "name": "regular",
-  "price": "25$"
-}]
-
+[
+  {
+    "id": 4,
+    "name": "kids",
+    "price": "50"
+  },
+  {
+    "id": 5,
+    "name": "sport",
+    "price": "100"
+  },
+  {
+    "id": 6,
+    "name": "regular",
+    "price": "25"
+  }
+]

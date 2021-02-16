@@ -3,7 +3,7 @@ import { H1 } from '../../../components/Header'
 import { Program } from '../../../components/Program'
 import { Wrapper, P } from './styled'
 
-export const Package = ({ currentPackage }) => {
+export const Package = ({ currentPackage, extraProgram }) => {
   const { price } = currentPackage
 
   const getPrograms = () => {
@@ -26,3 +26,4 @@ export const Package = ({ currentPackage }) => {
     </>
   )
 }
+

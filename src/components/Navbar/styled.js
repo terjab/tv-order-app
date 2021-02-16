@@ -21,5 +21,3 @@ export const NavItem = styled.li`
 export const Desciption = styled.p`
   font-size: ${theme.size.mSmall};
 `
-
-
