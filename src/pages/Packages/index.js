@@ -1,3 +1,4 @@
+import React from 'react'
 import data from '../../data/initial-packages-data.json'
 import { CardComponent as Card } from './Card'
 import { PackageWrap, P } from './styled'

@@ -1,6 +1,7 @@
+import React from "react"
 import { Nav, NavItem, Desciption } from './styled'
 import { Dropdown } from './Dropdown'
-import Button from '../../components/Button'
+import { Button } from '../../components/Button'
 
 export const Navbar = ({ currentPackage, packages, programs, onAdd }) => {
   return (
