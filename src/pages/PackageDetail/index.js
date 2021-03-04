@@ -1,3 +1,4 @@
+import React from "react"
 import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import packagesData from '../../data/initial-packages-data.json'
@@ -17,6 +18,9 @@ const PackageDetailComponent = ({ match, addProgram, program, setSelectedPackage
 
   const setInitialPackage = () => {
     const currentPackage = packagesData.packages.filter(
+      // Here you should parse int and then do ===
+      // If you add ==
+      // Me = 😡 You = 😢
       (item) => item.id == packageId
     )[0]
     setTarif(currentPackage)

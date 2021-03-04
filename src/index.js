@@ -2,9 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
 import { Provider } from 'react-redux'
-import { store } from './store/index'
+import { configureStore } from './store/index'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router } from 'react-router-dom'
+
+const store = configureStore()
 
 const render = () => {
   ReactDOM.render(
@@ -17,6 +19,7 @@ const render = () => {
   )
 }
 
+// Do we really need this? I think that new version of React have module.hot implemented by itself
 if (module.hot) {
   module.hot.accept('./App', render)
 }

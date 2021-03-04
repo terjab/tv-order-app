@@ -1,3 +1,4 @@
+import React from "react"
 import { connect } from 'react-redux'
 import { H1 } from '../../components/Header'
 import { Link, P, Summary, SummaryItem, SummaryHeader, HR, PriceDetail, Price, PriceWrapper } from './styled'
@@ -12,14 +13,14 @@ export const OrderPackage = ({ location, programs, selectedPackage }) => {
       <Link to={HOMEPAGE}>{`<< Back to homepage`}</Link>
       <H1>Thank you for your purchase!</H1>
       <P>Order summary:</P>
-      <HR></HR>
+      <HR />
       <Summary>
         <SummaryHeader>Tarif:</SummaryHeader>
         <SummaryItem>{selectedPackage.name}</SummaryItem>
-        <HR></HR>
+        <HR />
         <SummaryHeader>Packages:</SummaryHeader>
         {Object.entries(programs).map(name => (<SummaryItem>{name[0]} - {name[1]}x</SummaryItem>) )}
-        <HR></HR>
+        <HR />
       </Summary>
       <PriceWrapper>
         <Price>Total price: {parseInt(regular)+ parseInt(extras)}$</Price>

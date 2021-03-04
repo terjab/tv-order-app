@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import programsData from '../../../data/programs.json'
 import { H1 } from '../../../components/Header'
@@ -6,6 +6,7 @@ import { Program } from '../../../components/Program'
 import { Wrapper, P, ProgramWrapper, Sum, ButtonWrapper } from './styled'
 import isEmpty from 'ramda/src/isEmpty'
 import { Link } from '../../../components/Link'
+import { uuidv4 } from "./../../../common/helpers/idGenerator"
 
 const PackageComponent = ({ currentPackage, programs }) => {
   const { price, name, id } = currentPackage
@@ -15,7 +16,7 @@ const PackageComponent = ({ currentPackage, programs }) => {
 
   useEffect(() => {
     const regularData = getPrograms(currentPackage.programs)
-    const extrasData = getPrograms(programs, true)
+    const extrasData = getPrograms(programs)
 
     setPackagesPrice(calculateExtras(extrasData))
     setRegularComponents(regularData)
@@ -23,24 +24,24 @@ const PackageComponent = ({ currentPackage, programs }) => {
   }, [programs, currentPackage])
 
   const calculateExtras = extrasData => {
-    const sum = extrasData.reduce( (total, item) => total + item.props.price, 0)
-    return sum
+    extrasData.reduce( (total, item) => total + item.props.price, 0)
   }
 
   const getProgramPrice = (programName) => {
-    const programPrice = parseInt(programsData.filter( item => item.name === programName)[0].price)
-    return programPrice
+    parseInt(programsData.filter( item => item.name === programName)[0].price)
   }
 
+  // It will be better to pass id with whole data not creating uuid because of memory
+  // But you definitely need key here
   const getPrograms = ( renderPrograms ) => {
-    let programComponents = []
-
-    for (const [program, count] of Object.entries(renderPrograms)) {
-      for (let i = 0; i < count; i++) {
-        programComponents.push(<Program name={program} price={getProgramPrice(program)}/>)
-      }
-    }
-    return programComponents
+    console.log("Here")
+   return Object.entries(renderPrograms).map(object => {
+     return [...Array(object[1])].map(() => {
+       const programs = <Program key={"Yolo"} name={object[0]} price={getProgramPrice(object[0])}/>
+       console.log(programs)
+       return programs
+     })
+   })
   }
 
   return (

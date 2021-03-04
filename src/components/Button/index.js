@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import theme from '../../common/theme'
 
-const Button = styled.button`
+export const Button = styled.button`
   background: ${theme.color.brown};
   padding: ${theme.size.xSmall};
   margin-top: ${theme.size.small};
@@ -14,4 +14,3 @@ const Button = styled.button`
   }
 `
 
-export default Button

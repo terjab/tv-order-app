@@ -5,6 +5,7 @@ import { setSelectedPackage as setSelectedPackageAction } from '../../../store/s
 import { noProgramSelected as noProgramSelectedAction } from '../../../store/selectedDropdownData/actions'
 import { Select, Option } from './styled'
 
+// Why there is a completely different syntax than in other files? Did you copy it?
 class DropdownComponent extends Component {
   state = {
     value: '',
